@@ -11,3 +11,5 @@ Little things for you to know:
 * I use debian-like-systems for my servers
 * I use Arch Linux for nearly all my clients
 * I will keep the Docs as short and efficient as possible
+
+![meme-linux-kidnapping](/assets/img/meme-linux-kidnapping.jpg)
