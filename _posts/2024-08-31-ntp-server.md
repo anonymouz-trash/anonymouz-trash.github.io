@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  "Network Time Protocol (NTP)"
+title:  "Network Time Protocol (NTP) on Linux Servers"
 categories: [Server Administration]
 tags: [debian,linux,server,administration,ntp]
 image:
   path: /assets/img/2024-12-22-ntp.jpg
+last_modified_at: 2024-09-02 14:45:00 +0100
 ---
 The Network Time Protocol (NTP) is a networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks. In operation since before 1985, NTP is one of the oldest Internet protocols in current use. NTP was designed by David L. Mills of the University of Delaware.
 

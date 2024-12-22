@@ -5,6 +5,7 @@ categories: [Client Administration]
 tags: [arch,linux,client,administration,tty,console,font]
 image:
   path: /assets/img/2024-12-20-tty-console-font.jpg
+#last_modified_at: 2024-08-26 10:38:00 +0100
 ---
 
 This is for the people that are old ;-), like me,  or with 4K displays.

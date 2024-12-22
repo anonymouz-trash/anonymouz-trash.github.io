@@ -5,6 +5,7 @@ categories: [Server Administration]
 tags: [debian,linux,server,administration,network,netfilter,iptables,nftables]
 image:
   path: /assets/img/2024-12-22-netfilter.jpg
+last_modified_at: 2024-08-26 12:53:00 +0100
 ---
 Iptables is the main packet filtering and firewalling tool in the Linux world. It's developed by a company named NetFilter. So iptables becomes deprecated over the time and nftables is the new implementation of iptables.
 

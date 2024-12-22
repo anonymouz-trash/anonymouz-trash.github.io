@@ -5,6 +5,7 @@ categories: [Server Administration]
 tags: [debian,linux,server,administration,schedule,tasks,systemd,timer,cron]
 image:
   path: /assets/img/2024-12-22-schedule-jobs.jpg
+last_modified_at: 2024-10-14 06:34:00 +0100
 ---
 Since I had trouble using cron, and crontab, in the past I decided to use `systemd` instead. You are also able to monitor them in a better way than in `cron`.
 

@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  "Network Time Protocol (NTP)"
+title:  "Network Time Protocol (NTP) on Linux Clients"
 categories: [Client Administration]
 tags: [arch,linux,client,administration,ntp,time]
 image:
   path: /assets/img/2024-12-20-ntp.jpg
+#last_modified_at: 2024-09-02 10:02:00 +0100
 ---
 
 ## Definition

@@ -5,6 +5,7 @@ categories: [Server Administration]
 tags: [debian,linux,server,administration,network,interface]
 image:
   path: /assets/img/2024-12-22-networking.jpg
+last_modified_at: 2024-08-26 10:57:00 +0100
 ---
 In this post I describe simple network configuration steps of Linux servers and some commands for troubleshooting and testing.
 
