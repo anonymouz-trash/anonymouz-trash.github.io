@@ -3,6 +3,8 @@ layout: post
 title:  "Configuring the TTY console font"
 categories: [Client Administration]
 tags: [arch,linux,client,administration,tty,console,font]
+image:
+  path: /assets/img/2024-12-20-tty-console-font.jpg
 ---
 
 This is for the people that are old ;-), like me,  or with 4K displays.
