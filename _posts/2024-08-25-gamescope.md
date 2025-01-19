@@ -46,6 +46,7 @@ Gamescope offers many options, far too many to cover here. For a full list use t
 ```bash
 gamescope -h 720 -H 1080 -F fsr -f --expose-wayland --
 ```
+
 | parameter | description |
 | --- | --- |
 | -W, --output-width | output width (of display) |
@@ -57,6 +58,7 @@ gamescope -h 720 -H 1080 -F fsr -f --expose-wayland --
 | -b, --borderless | make the window borderless |
 | -f, --fullscreen | make the window fullscreen |
 | --expose-wayland | Allow support for wayland clients using xdg-shell |
+
 > fsr => AMD FidelityFX™ Super Resolution 1.0
 {: .prompt-info }
 
