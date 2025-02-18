@@ -5,8 +5,9 @@ categories: [Linux Scripting]
 tags: [linux,firewall,app,application,iptables,nftables]
 image:
   path: /assets/img/2025-02-18-no-internet.jpg
-last_modified_at: 2025-02-18 19:47:00 +0100
+last_modified_at: 2025-02-18 20:22:00 +0100
 ---
+
 This tutorial is ment to be an example to block specific applications from accessing the internet. This is accomplished by the use of bash scripting and iptables firewalling.
 
 ## Create a new group for iptables
