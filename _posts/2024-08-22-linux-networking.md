@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Networking"
+title:  "Linux Networking"
 categories: [Server Administration]
 tags: [debian,linux,server,administration,network,interface]
 image:
@@ -49,7 +49,11 @@ systemctl restart networking
 ```
 or
 ```bash
-ifdown -a; ifup -a
+ifdown --all; ifup --all
+```
+or
+```bash
+ifdown eth0; ifup eth0
 ```
 
 ## Show listinening (open) ports on the server
