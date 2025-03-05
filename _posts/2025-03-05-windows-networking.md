@@ -4,8 +4,8 @@ title:  "Windows Networking"
 categories: [Server Administration]
 tags: [debian,linux,server,administration,network,interface]
 image:
-  path: /assets/img/2024-12-22-networking.jpg
-last_modified_at: 2024-08-26 10:57:00 +0100
+  path: /assets/img/2025-03-05-windows-networking.jpg
+last_modified_at: 2025-03-05 06:45:00 +0100
 ---
 In this post I describe simple network configuration steps of Windows servers and some commands for troubleshooting and testing. This all happens in PowerShell (v. 7.5), of course. :-) 
 
@@ -73,20 +73,22 @@ Remove-NetIPAddress -InterfaceIndex 12 -IPAddress 10.0.1.4
 Remove-DNSClientServerAddress -InterfaceIndex 12 -ServerAddresses 9.9.9.9, 1.1.1.1
 ```
 
-When finished restart network service.
-```bash
-systemctl restart networking
+Afterwards test your settings with the CmdLets above.
+
+## Troubleshooting
+
+Deactivate a network adapter
+```shell
+Get-NetAdapter -InterfaceIndex 12 | Disable-NetAdapter
 ```
 or
-```bash
-ifdown --all; ifup --all
+```shell
+Disable-NetAdapter "*"
 ```
-or
-```bash
-ifdown eth0; ifup eth0
-```
+to deactivate all network adapters.
 
 ## Show listinening (open) ports on the server
 
-to do
-
+```shell
+Get-NetTCPConnection -State Listen,Established
+```
