@@ -5,26 +5,27 @@ categories: [Server Administration]
 tags: [debian,linux,server,administration,network,interface]
 image:
   path: /assets/img/2025-03-05-windows-networking.jpg
-last_modified_at: 2025-03-05 06:45:00 +0100
+last_modified_at: 2025-03-06 07:45:00 +0100
 ---
 In this post I describe simple network configuration steps of Windows servers and some commands for troubleshooting and testing. This all happens in PowerShell (v. 7.5), of course. :-) 
 
 ## Gather network adapters information
-```bash
+```shell
 Get-NetAdapter
-Get-NetIPConfiguration
-Get-NetIPInterface
 ```
-Output should look like:
+Output:
 ```console
-PS C:\> Get-NetAdapter
-
 Name                      InterfaceDescription                    ifIndex Status       MacAddress             LinkSpeed
 ----                      --------------------                    ------- ------       ----------             ---------
 Ethernet-Instanz 0        Red Hat VirtIO Ethernet Adapter              12 Up           52-54-00-43-E3-00        10 Gbps
+```
+> Get the `ifIndex` number of our interface.
+{: .prompt-info }
 
-PS C:\> Get-NetIPConfiguration
-
+```shell
+Get-NetIPConfiguration
+```
+```console
 InterfaceAlias       : Ethernet-Instanz 0
 InterfaceIndex       : 12
 InterfaceDescription : Red Hat VirtIO Ethernet Adapter
@@ -33,9 +34,14 @@ IPv4Address          : 192.168.122.23
 IPv4DefaultGateway   : 192.168.122.1
 DNSServer            : 9.9.9.9
                        149.112.112.112
+```
+> Get ip configuration, if there's any.
+{: .prompt-info }
 
-PS C:\> Get-DnsClientServerAddress
-
+```shell
+Get-DnsClientServerAddress
+```
+```console
 InterfaceAlias               Interface Address ServerAddresses
                              Index     Family
 --------------               --------- ------- ---------------
@@ -43,16 +49,21 @@ Ethernet-Instanz 0                  12 IPv4    {9.9.9.9, 149.112.112.112}
 Ethernet-Instanz 0                  12 IPv6    {}
 Loopback Pseudo-Interface 1          1 IPv4    {}
 Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3}
+```
+> Get DNS server info, if there's any.
+{: .prompt-info }
 
-PS C:\> Get-NetIPInterface
-
+```shell
+Get-NetIPInterface
+```
+```console
 ifIndex InterfaceAlias                  AddressFamily NlMtu(Bytes) InterfaceMetric Dhcp     ConnectionState PolicyStore
 ------- --------------                  ------------- ------------ --------------- ----     --------------- -----------
 1       Loopback Pseudo-Interface 1     IPv6            4294967295              75 Disabled Connected       ActiveStore
 12      Ethernet-Instanz 0              IPv4                  1500              15 Enabled  Connected       ActiveStore
 1       Loopback Pseudo-Interface 1     IPv4            4294967295              75 Disabled Connected       ActiveStore
 ```
-> 1st command: Get the `ifIndex` number of our interface. 2nd command: Get ip configuration. 3rd command: Get DNS server info. 4th command: Check the `ConnectionState` and if the interface is configured to get its IP configuration from a `Dhcp`-Server.
+> Check the `ConnectionState` and if the interface is configured to get its IP configuration from a `Dhcp`-Server.
 {: .prompt-info }
 
 ## Configure static ip-address
@@ -86,6 +97,8 @@ or
 Disable-NetAdapter "*"
 ```
 to deactivate all network adapters.
+
+Use the opposite to `Enable-NetAdapter` again.
 
 ## Show listinening (open) ports on the server
 
