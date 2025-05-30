@@ -343,9 +343,6 @@ providers:
   docker:
     watch: true
     network: proxy # Add Your Docker Network Name Here
-    # Default host rule to containername.domain.example
-    # defaultRule: "Host(`{{ index .Labels \"com.docker.compose.service\"}}.skynetcloud.org`)"
-#    swarmModeRefreshSeconds: 15s
     exposedByDefault: false
     endpoint: "tcp://dockersocket:2375" # Uncomment if you are using docker socket proxy
 # Enable traefik ui

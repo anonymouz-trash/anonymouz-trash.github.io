@@ -5,7 +5,7 @@ categories: [Linux Gaming]
 tags: [arch,linux,client,gaming,gamescope]
 image:
   path: /assets/img/2024-12-22-gamescope.jpg
-last_modified_at: 2024-08-26 10:56:00 +0100
+last_modified_at: 2025-05-30 09:19:00 +0100
 ---
 Gamescope is a microcompositor from **Valve** that is used on the **Steam Deck**. Its goal is to provide an isolated compositor that is tailored towards gaming and supports many gaming-centric features such as:
 * Spoofing resolutions
@@ -80,3 +80,29 @@ WINE_FULLSCREEN_FSR=1 WINE_FULLSCREEN_FSR_MODE=balanced WINE_FULLSCREEN_FSR_STRE
 ... have options for this, for example:
 ![gamescope-lutris](/assets/img/gamescope-lutris.png)
 ![gamescope-heroic](/assets/img/gamescope-heroic.png)
+
+## Examples
+
+my Setup(s):
+
+| PC | CPU | Cores / Threads | RAM | GPU |
+| --- | --- | --- | --- | --- |
+| Gigabyte BRIX s | AMD Ryzen 7 4800U | 8 / 16 | 32 GB | AMD Radeon RX Vega 8 | 
+| Asus TUF FX504GE | Intel Core i7-8750H | 6 / 12 | 16 GB | Nvidia Geforce 1050 Ti Mobile |
+
+### The Elder Scrolls V - Skyrim (Special Edition)
+* Used `Proton-GE` (latest)
+* Launch options in Steam:
+```bash
+WINE_FULLSCREEN_FSR=1 WINE_FULLSCREEN_FSR_CUSTOM_MODE=1280x720 WINE_FULLSCREEN_FSR_MODE=quality WINE_FULLSCREEN_FSR_STRENGTH=2 %command%
+```
+
+* Settings ingame:
+![gamescope-tesiv-settings](/assets/img/gamescope-tesv-settings.png)
+
+* Final result:
+![gamescope-tesiv-fps](/assets/img/gamescope-tesv-fps.png)
+> I don't know how accurate `MangoHUD` is, but the game runs smooth.
+
+> More games will follow.
+{: .prompt-info }
