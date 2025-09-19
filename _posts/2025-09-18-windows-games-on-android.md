@@ -5,7 +5,7 @@ categories: [Android Gaming]
 tags: [android,gaming,windows,winlator,gamenative,gamehub,adreno,turnip]
 image:
   path: /assets/img/2025-09-18-windows-games-on-android.jpg
-last_modified_at: 2025-09-18 06:00:00 +0100
+last_modified_at: 2025-09-19 10:31:00 +0100
 ---
 
 ## Introduction
