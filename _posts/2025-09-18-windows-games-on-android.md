@@ -13,6 +13,7 @@ I recently bought myself a new gaming handheld. After long waiting and strugglin
 I don't have any other device to test or compare settings or tweaks I found out and describe in this article. Please keep that in mind.
 
 Technical details:
+
 | Part | Value |
 | --- | --- |
 | CPU | Qualcomm Snapdragon 865 |
@@ -41,8 +42,6 @@ Source: [https://github.com/MrPurple666/purple-turnip/releases/tag/vturnip_mrpur
 
 > I for myself search through the release pages in GitHub with the keywords: 650, 6xx, A650 or A6xx. ;-)
 {: .prompt-info}
-
-
 
 ### Windows emulators
 * **Winlator** by BrunoSX: This is the ground root of all these amazing projects. Without it any other project wouldn't be possible without it.
@@ -82,9 +81,140 @@ After everything finished the burger menu on top left should be available. Tap i
 | Contents | Here you have the option to load other versions of programs or addons like DXVK, WineD3D and so on. Not important for now. |
 | Settings | This is the place of Box 64 presets and other things like dark mode for the application itself. |
 
+### Shortcuts
+In this section I will add tweaks per game as soon I'll find out.
+
+#### Steam
+You can install Steam as you would normally on Windows PC. If you use an sdcard set it up in your container as discribed in containers section. Then you don't have to struggle with managing your Steam settings and library.
+
+| menu | setting | value | description |
+| --- | --- | --- | --- |
+| interface | GPU-Accerlation | off | I noticed a more responsive / reactive interface. |
+| interface | News-Window at App-Start | off | Loading this takes time. |
+
+When you edit the shortcut you'll have the same options as you would configure the container itself. Set the following:
+
+| item | variable | value | description |
+| --- | --- | --- | --- |
+| Advanced | Box64 Preset | Unity / Non-Unity | Select / Set the right preset for the game you want to play. |
+| Advanced | Input Controls | Profile-Name | If you created a controller profile select it here. |
+| Advanced | Exec Arguments | -vgui -nocrashmonitor -noshaders -no-shared-textures -cef-single-process -cef-in-process-gpu -cef-disable-sandbox -disable-winh264 -no-cef-sandbox -vrdisable -cef-disable-breakpad -cef-disable-gpu -no-dwrite -no-gameoverlayrenderer -noverifyfiles -nobootstrapupdate -skipinitialbootstrap -norepairfiles -overridepackageurl | If you noticed that Steam wouldn't start after installation or per shortcut this is a workaround. |
+
+#### NFS Most Wanted Black Edition (2005)
+
+If you want to use Widescreen mods which use a modified `dinput8.dll` to load the mods you **must** define that as Environment Variable. This procedure also works with Wine on normal Desktop-PCs.
+
+| variable | value |
+| --- | --- |
+| WINEDLLOVERRIDES | dinput8=n,b |
+
+### Containers
+In this section I'll try to explain important settings as good as I could. 
+![winlator-container-wrapper](/assets/img/winlator-container-wrapper.png)
+Set your preferred display resolution. I recommend you to leave it at `1280x720`.
+![winlator-container-wrapper-gpu-driver](/assets/img/winlator-container-wrapper-gpu-driver.png)
+
+#### GPU driver
+You can choose between `Wrapper` and `Wrapper-v2`. I didn't notice any differences between those, but next to it tap on the `gear`-icon and choose your desired GPU driver.
+If you have a Snapdragon CPU with Adreno GPU. On any other CPU vendor you must select `System`.
+I think the `v762` and `v805` are for Snapdragon 8 Gen x and Snapdragon 8 Elite.
+![winlator-container-wrapper-dxvk](/assets/img/winlator-container-wrapper-dxvk.png)
+I suggest you to use the latest version available. Beside that the suffix `gplasync` is important. Turn both Async switches `on`.
+
+> Tap on the `questionmark`-icon next to DX-Wrapper to get a list with all options and their meanings.
+{: .prompt-tip}
+
+#### Audio driver
+Always use `ALSA-Reflector` because its preventing that Audio gets broken during gameplay.
+![winlator-container-audio](/assets/img/winlator-container-audio.png)
+More on that [here](https://github.com/coffincolors/winlator/releases/tag/cmod_v13).
+
+#### Wine Configuration
+![winlator-container-winecfg](/assets/img/winlator-container-winecfg.png)
+The only things you may adjust are `Theme` and `Video Memory Size`.
+
+| variable | value | description |
+| --- | --- | --- |
+| Theme | light | Default value, optional because there are no windows when starting through Shortcuts |
+| Renderer | gl | Default value, as for now leave it as it is, because vulkan is broken. The devs are aware of that. |
+| Video Memory Size | 2048 | Default value |
+
+#### Environment Variables
+You can leave everything here as is. This is the section when customizing things per Shortcuts.
+![winlator-container-env-var](/assets/img/winlator-container-env-var.png)
+
+| variable | value | description |
+| --- | --- | --- |
+| DXVK_HUD | devinfo, fps, frametimes, gpuload, version, api | Default value, you can safely remove it if don't want a performance monitor displayed permanently. |
+| MESA_EXTENSION_MAX_YEAR | 2003 | optional, if older games don't open try this |
+| MANGOHUD | off | default value, if you want you can enable Mangohud. |
+
+#### Drives
+It is recommended to use an sdcard as external storage as well. Therefor you need to add a new mount point and give it the path to the sdcard. Unfortunateley the path is not easy to find with stock apps.
+![winlator-container-drives](/assets/img/winlator-container-drives.png)
+Some file manager from Google Play or F-Droid are able to retrieve the `ID` of sdcard which you'll need. It should look like in the picture. You can also retrieve it from your PC when inserted or if you use Termux just type `df -h` in the terminal and copy/paste the path that looks like in the picture above.
+
+#### Advanced
+![winlator-container-advanced](/assets/img/winlator-container-advanced.png)
+In this section you choose your previously created `Box64-Preset`, the `RC file` and maybe the `Startup Selection`.
+
+> In `Shortcuts` sub-menu you have additional options like `Input Controls Profiles` and `Exec Arguments`.
+{: .prompt-tip}
+
 ### Controller Manager
 At first assign the Retroid Pocket controller as Player 1.
 ![winlator-burger-menu](/assets/img/winlator-burger-menu.png)
+The result should look something like this. Btw you can also add a second external controller as Player 2. This is great if you use your handheld as console connected to an external display.
+![winlator-controller-manager-assign](/assets/img/winlator-controller-manager-assign.png)
+
+### Input Controls
+In this sub-menu you can map keybindings and create (and also export) profiles for games/application that don't have native gamepad support. You can set keybindings by tapping on your controller at the bottom.
+![winlator-input-controls](/assets/img/winlator-input-controls.png)
+This will open another sub-menu were you press each button you want to map and configure it afterwards.
+![winlator-input-controls-bindings](/assets/img/winlator-input-controls-bindings.png)
+
+### Settings (Box64)
+The most important setting here are the Box64 presets.
+![winlator-box64-presets](/assets/img/winlator-box64-presets.png)
+
+Tap on the `+`-symbol and create two profiles called `Unity` and `Non-Unity`. This is significant for running games based on Unity and the rest.
+You can lookup a short description and possible values in ptitSeb's [Box64 GitHub](https://github.com/ptitSeb/box64/blob/main/docs/USAGE.md).
+The following variable settings are only the changed ones leave the rest as default.
+
+#### Box64 Unity preset
+
+| variable | value |
+| --- | --- |
+| BOX64_DYNAREC_SAFEFLAGS | 1 |
+| BOX64_DYNAREC_FASTNAN | on / 1 | 
+| BOX64_DYNAREC_FASTROUND | 1 |
+| BOX64_DYNAREC_BIGBLOCK | 0 |
+| BOX64_DYNAREC_STRONGMEM | 1 |
+| BOX64_DYNAREC_FORWARD | 512 |
+| BOX64_DYNAREC_CALLRET | on / 1 |
+| BOX64_DYNAREC_WAIT | off / 0 |
+| BOX64_AVX | 1 |
+
+#### Box64 Non-Unity preset
+
+| variable | value |
+| --- | --- |
+| BOX64_DYNAREC_SAFEFLAGS | 1 |
+| BOX64_DYNAREC_FASTNAN | on / 1 | 
+| BOX64_DYNAREC_FASTROUND | 1 |
+| BOX64_DYNAREC_BIGBLOCK | 3 |
+| BOX64_DYNAREC_STRONGMEM | 1 |
+| BOX64_DYNAREC_FORWARD | 512 |
+| BOX64_DYNAREC_CALLRET | on / 1 |
+| BOX64_DYNAREC_WAIT | off / 0 |
+| BOX64_AVX | 1 |
+
+
+
+
+
+
+
 
 
 
