@@ -98,7 +98,13 @@ When you edit the shortcut you'll have the same options as you would configure t
 | --- | --- | --- | --- |
 | Advanced | Box64 Preset | Unity / Non-Unity | Select / Set the right preset for the game you want to play. |
 | Advanced | Input Controls | Profile-Name | If you created a controller profile select it here. |
-| Advanced | Exec Arguments | -vgui -nocrashmonitor -noshaders -no-shared-textures -cef-single-process -cef-in-process-gpu -cef-disable-sandbox -disable-winh264 -no-cef-sandbox -vrdisable -cef-disable-breakpad -cef-disable-gpu -no-dwrite -no-gameoverlayrenderer -noverifyfiles -nobootstrapupdate -skipinitialbootstrap -norepairfiles -overridepackageurl | If you noticed that Steam wouldn't start after installation or per shortcut this is a workaround. |
+| Advanced | Exec Arguments | Box below | If you noticed that Steam wouldn't start after installation or per shortcut this is a workaround. |
+
+```shell
+-vgui -nocrashmonitor -noshaders -no-shared-textures -cef-single-process -cef-in-process-gpu -cef-disable-sandbox -disable-winh264 -no-cef-sandbox -vrdisable -cef-disable-breakpad -cef-disable-gpu -no-dwrite -no-gameoverlayrenderer -noverifyfiles -nobootstrapupdate -skipinitialbootstrap -norepairfiles -overridepackageurl
+```
+> Better to copy & paste ^^
+
 
 #### NFS Most Wanted Black Edition (2005)
 
