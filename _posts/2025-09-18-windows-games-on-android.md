@@ -183,45 +183,21 @@ This will open another sub-menu were you press each button you want to map and c
 The most important setting here are the Box64 presets.
 ![winlator-box64-presets](/assets/img/winlator-box64-presets.png)
 
-Tap on the `+`-symbol and create two profiles called `Unity` and `Non-Unity`. This is significant for running games based on Unity and the rest.
+Tap on the `+`-symbol and create two profiles called `Unity (MonoBleedingEdge)`, `Unity (GameAssembly)` and `Non-Unity`.
+This is significant for running games based on Unity and the rest.
 You can lookup a short description and possible values in ptitSeb's [Box64 GitHub](https://github.com/ptitSeb/box64/blob/main/docs/USAGE.md).
-The following variable settings are only the changed ones leave the rest as default.
+The following settings are only the changed ones. You can the leave the rest as default.
 
-#### Box64 Unity preset
+The following pictures are screenshotted from a YouTube video from [Zerokimchi](https://youtu.be/EJDWZUGF9sk)
 
-| variable | value |
-| --- | --- |
-| BOX64_DYNAREC_SAFEFLAGS | 1 |
-| BOX64_DYNAREC_FASTNAN | on / 1 | 
-| BOX64_DYNAREC_FASTROUND | 1 |
-| BOX64_DYNAREC_BIGBLOCK | 0 |
-| BOX64_DYNAREC_STRONGMEM | 1 |
-| BOX64_DYNAREC_FORWARD | 512 |
-| BOX64_DYNAREC_CALLRET | on / 1 |
-| BOX64_DYNAREC_WAIT | off / 0 |
-| BOX64_AVX | 1 |
+#### Box64 Unity (MonoBleedingEdge) preset
+This preset represents recommended settings if in your Unity-Game folder is a folder named `MonoBleedingEdge`.
+![winlator-box64-monobleedingedge](/assets/img/winlator-box64-monobleedingedge.png)
+
+#### Box64 Unity (GameAssembly.dll) preset
+This preset represents recommended settings if in your Unity-Game folder is a file named `GameAssembly.dll`.
+![winlator-box64-gameassembly](/assets/img/winlator-box64-gameassembly.png)
 
 #### Box64 Non-Unity preset
-
-| variable | value |
-| --- | --- |
-| BOX64_DYNAREC_SAFEFLAGS | 1 |
-| BOX64_DYNAREC_FASTNAN | on / 1 | 
-| BOX64_DYNAREC_FASTROUND | 1 |
-| BOX64_DYNAREC_BIGBLOCK | 3 |
-| BOX64_DYNAREC_STRONGMEM | 1 |
-| BOX64_DYNAREC_FORWARD | 512 |
-| BOX64_DYNAREC_CALLRET | on / 1 |
-| BOX64_DYNAREC_WAIT | off / 0 |
-| BOX64_AVX | 1 |
-
-
-
-
-
-
-
-
-
-
-
+This preset represents recommended settings for all other non-unity games.
+![winlator-box64-non-unity](/assets/img/winlator-box64-non-unity.png)
