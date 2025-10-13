@@ -201,3 +201,4 @@ This preset represents recommended settings if in your Unity-Game folder is a fi
 #### Box64 Non-Unity preset
 This preset represents recommended settings for all other non-unity games.
 ![winlator-box64-non-unity](/assets/img/winlator-box64-non-unity.png)
+
