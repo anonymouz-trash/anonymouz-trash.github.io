@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Windows Networking"
+title:  "Windows Networking with Powershell"
 categories: [Server Administration]
-tags: [debian,linux,server,administration,network,interface]
+tags: [windows,client,server,administration,network,interface,powershell]
 image:
   path: /assets/img/2025-03-05-windows-networking.jpg
-last_modified_at: 2025-03-06 07:45:00 +0100
+last_modified_at: 2026-01-20 05:54:00 +0100
 ---
 In this post I describe simple network configuration steps of Windows servers and some commands for troubleshooting and testing. This all happens in PowerShell (v. 7.5), of course. :-) 
 
