@@ -7,11 +7,11 @@ image:
   path: /assets/img/2024-12-22-schedule-jobs.jpg
 last_modified_at: 2024-10-14 06:34:00 +0100
 ---
-Since I had trouble using cron, and crontab, in the past I decided to use `systemd` instead. You are also able to monitor them in a better way than in `cron`.
+Since I had trouble using cron and crontab in the past, I decided to use `systemd` instead. You are also able to monitor them in a better way than with `cron`.
 
 ## 1st Example: CrowdSec hub update in docker container
-Hub updates in the CrowdSec container must be handled manually because there is no (systemd) services installed which can handle that.   
-At first I created a basic shell script, for instance, called `crowdsec-hub-update`. Yes, without `.sh` file extension.
+Hub updates in the CrowdSec container must be handled manually because there is no (systemd) service installed which can handle that.   
+First, I created a basic shell script, for instance, called `crowdsec-hub-update`. Yes, without `.sh` file extension.
 ```bash
 #!/usr/bin/bash
 docker exec crowdsec cscli hub update
@@ -39,7 +39,7 @@ WantedBy=timers.target
 |---|---|
 | Unit= | which unit (or service-file) this timer triggers |
 | OnBootSec= | waiting after boot before 1st executing, comment or delete this line if you just want to make use of `OnCalendar` entry |
-| OnCalendar= | defines a exact time, like in cron, when the unit is executed next |
+| OnCalendar= | defines an exact time, like in cron, when the unit is executed next |
 
 After that create the corresponding unit in the same folder called `crowdsec-hub-update.service`.
 ```bash
@@ -78,7 +78,7 @@ ip addr add 192.168.0.252/30 dev mac0
 ifconfig mac0 up
 ```
 {: file="add-macvlan-interface"}
-> This creates a new device called `mac0` linked as bridge to `eth0` with an gateway IP set. When the docker container boots, it is a member of this network, the network interface will obtain the first ip which is `.253`.
+> This creates a new device called `mac0`, linked as a bridge to `eth0`, with a gateway IP set. When the docker container boots and is a member of this network, the network interface will obtain the first IP, which is `.253`.
 {: .prompt-info }
 
 ### Configuration tasks at boot
@@ -99,7 +99,7 @@ User=root
 WantedBy=multi-user.target
 ```
 {: file="/etc/systemd/system/add-mac-vlan-int.service"}
-> It is the same process as creating recurring tasks, but without a timer-file. This unit will start at boot (when you enable it) after the network got initialized.
+> It is the same process as creating recurring tasks, but without a timer file. This unit will start at boot (when you enable it) after the network has initialized.
 {: .prompt-info }
 
 ### Usage

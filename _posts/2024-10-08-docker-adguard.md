@@ -7,7 +7,7 @@ image:
   path: /assets/img/2024-12-22-docker-adguard.jpg
 last_modified_at: 2024-10-08 06:57:00 +0100
 ---
-In this example AdGuard Home uses its own IP-Adress but is on the same server as the other services. To achieve this you have to create a so called `macvlan` network / interface. It also uses `Unbound` to query all adresses top-down from the root DNS servers instead of asking the next ones. Those requests maybe slower the first time but even faster when cached.
+In this example AdGuard Home uses its own IP address but is on the same server as the other services. To achieve this you have to create a so called `macvlan` network / interface. It also uses `Unbound` to query all addresses top-down from the root DNS servers instead of asking the next ones. Those requests may be slower the first time, but even faster when cached.
 ```yml
 services:
   adguardhome:

@@ -9,7 +9,7 @@ last_modified_at: 2024-09-02 14:45:00 +0100
 ---
 The Network Time Protocol (NTP) is a networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks. In operation since before 1985, NTP is one of the oldest Internet protocols in current use. NTP was designed by David L. Mills of the University of Delaware.
 
-## A bit explaination
+## A brief explanation
 ![wiki_ntp_stratum](https://upload.wikimedia.org/wikipedia/commons/c/c9/Network_Time_Protocol_servers_and_clients.svg)
 (c) wikimedia.org
 
@@ -40,7 +40,7 @@ NTPD_OPTS='-4 -g -U 0'
 | -U | Number of seconds to wait between interface list scans. Set to 0 to disable dynamic interface list updating. |
 | other | [https://linux.die.net/man/8/ntpd](https://linux.die.net/man/8/ntpd/)
 
-> Backup the original `ntp.conf` before editing, because there are useful examples and comments in it.
+> Back up the original `ntp.conf` before editing, because there are useful examples and comments in it.
 {: .prompt-tip }
 
 ```bash

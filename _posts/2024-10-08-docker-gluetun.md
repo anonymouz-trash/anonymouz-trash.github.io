@@ -7,7 +7,7 @@ image:
   path: /assets/img/2024-12-22-docker-gluetun.jpg
 last_modified_at: 2024-10-08 06:57:00 +0100
 ---
-Very cool service to add a VPN connection to your other services if needed. Downloaders maybe a good example. ;o)
+A very cool service for adding a VPN connection to your other services if needed. Download clients are maybe a good example. ;o)
 ```yml
 services:
   gluetun:
@@ -49,7 +49,7 @@ networks:
 ```
 {: file="gluetun/compose.yml"}
 
-> FIREWALL_OUTBOUND_SUBNETS = Whitelisted local networks. See [https://github.com/qdm12/gluetun-wiki/tree/main/setup#setup](https://github.com/qdm12/gluetun-wiki/tree/main/setup#setup) to configuarate your VPN-provider.
+> FIREWALL_OUTBOUND_SUBNETS = Whitelisted local networks. See [https://github.com/qdm12/gluetun-wiki/tree/main/setup#setup](https://github.com/qdm12/gluetun-wiki/tree/main/setup#setup) to configure your VPN provider.
 {: .prompt-tip }
 
 > You must remove the `ports`-section of every container attached to Gluetun.

@@ -8,9 +8,9 @@ image:
 last_modified_at: 2024-10-19 06:57:00 +0100
 ---
 
-**Traefik** is a reverse proxy, but a router also. It redirects every wanted connection to your liking. This compose contains the needed configuration for CrowdSec Bouncer too and I will explain it later.
+**Traefik** is a reverse proxy, but also a router. It redirects every wanted connection according to your preferences. This compose contains the needed configuration for CrowdSec Bouncer too and I will explain it later.
 
-**CrowdSec** is a community-driven IDS/IPS-System. I will provide an easy to understand explaination later.
+**CrowdSec** is a community-driven IDS/IPS system. I will provide an easy-to-understand explanation later.
 
 **Authelia** is a self-hosted Single-Sign-On service to protect websites which don't have any form of authentication built-in.
 
@@ -103,7 +103,7 @@ labels:
 ```
 {: file="./config/acquis.yaml"}
 
-> You can define a specific path to a text file or even link the complete docker container if your parser support it. For this to work CrowdSec needs a connection to the Docker host usually at `/var/run/docker.sock` or through `Docker socket proxy`.
+> You can define a specific path to a text file or even link the complete docker container if your parser supports it. For this to work CrowdSec needs a connection to the Docker host usually at `/var/run/docker.sock` or through `Docker socket proxy`.
 {: .prompt-info }
 
 ## CrowdSec: Whitelisting IPs or domains
@@ -177,7 +177,7 @@ Unban IP:
 docker exec crowdsec cscli decisions delete --ip 192.168.0.101
 ```
 > Hint: To get shorter commands just add aliases to your bashrc or zshrc.
-> Also for collection hub update and upgrade create a script and put it to your systemd.timer or cronjob list. I wrote an article for this with this as an example: [https://docs.skynetcloud.org/posts/schedule-jobs/](https://docs.skynetcloud.org/posts/schedule-jobs/)
+> Also, for collection hub update and upgrade, create a script and add it to your systemd timer or cron job list. I wrote an article for this with this as an example: [https://docs.skynetcloud.org/posts/schedule-jobs/](https://docs.skynetcloud.org/posts/schedule-jobs/)
 
 ## Traefik & Authelia: compose.yml
 ```yml
@@ -514,4 +514,4 @@ networks:
 ```
 
 ## Authelia: configuration
-As you might understand. I will not show you my configuration here. :-) Go visit the official documentian at [https://www.authelia.com/configuration/prologue/introduction/](https://www.authelia.com/configuration/prologue/introduction/)
+As you might understand, I will not show you my configuration here. :-) Go visit the official documentation at [https://www.authelia.com/configuration/prologue/introduction/](https://www.authelia.com/configuration/prologue/introduction/)

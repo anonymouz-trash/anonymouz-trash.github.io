@@ -56,17 +56,17 @@ or
 ifdown eth0; ifup eth0
 ```
 
-## Show listinening (open) ports on the server
+## Show listening (open) ports on the server
 ```bash
 ss -lntp
 ```
-Output shoud look something like this:
+Output should look something like this:
 ```terminal
 State   Recv-Q  Send-Q   Local Address:Port   Peer Address:Port Process                                 
 LISTEN  0       32       192.168.122.1:53          0.0.0.0:*                                            
 LISTEN  0       50                   *:1716              *:*     users:(("kdeconnectd",pid=1613,fd=21)) 
 ```
-In this case, e.g. my linux client has an opend port for DNS (53) and 1716 which is used by KDEConnect.
+In this case, e.g., my Linux client has an open port for DNS (53) and 1716, which is used by KDEConnect.
 
 #### Who's logged in right now?
 ```bash
@@ -79,5 +79,5 @@ user@server:~$ w
 USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 user1   pts/0    192.168.0.16     13:00    0.00s  0.09s  0.02s cat /etc/shadow
 ```
-> Beside the logged in user you alse see the last executed command in the last row **(WHAT?!)**
+> Besides the logged-in user, you also see the last executed command in the last row **(WHAT?!)**
 {: .prompt-info }

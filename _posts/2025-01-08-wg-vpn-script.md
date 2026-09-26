@@ -10,9 +10,9 @@ last_modified_at: 2025-02-25 23:10:00 +0100
 
 ## Definition
 
-This script is intended to use it as a keyboard shortcut and start / vpn the Wireguard VPN client. It also detects if the Wireguard connection is already configured or not.
+This script is intended to be used as a keyboard shortcut to start / stop the Wireguard VPN client. It also detects whether the Wireguard connection is already established or not.
 
-When the script is started it checks for the Wireguard interface. If its there it stopps the client and removes the interface and if its not there its starting the client.
+When the script is started, it checks for the Wireguard interface. If it's there, it stops the client and removes the interface; if it's not there, it starts the client.
 
 ## Installation
 

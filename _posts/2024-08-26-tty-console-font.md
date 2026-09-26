@@ -8,7 +8,7 @@ image:
 #last_modified_at: 2024-08-26 10:38:00 +0100
 ---
 
-This is for the people that are old ;-), like me,  or with 4K displays.
+This is for people who are old ;-), like me, or who have 4K displays.
 
 ## Font location
 On Debian systems it should be: `/usr/share/consolefonts`

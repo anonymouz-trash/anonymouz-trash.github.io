@@ -7,7 +7,7 @@ image:
   path: /assets/img/2024-12-22-docker-cf-ddns.jpg
 last_modified_at: 2024-10-08 06:34:00 +0100
 ---
-To update the IP of my domain I use this image which automatically queries the IP my provider assigned me and send it to Cloudflare if it has changed.
+To update the IP of my domain, I use this image, which automatically queries the IP my provider assigned me and sends it to Cloudflare if it has changed.
 ```yml
 services:
   cloudflare-ddns:

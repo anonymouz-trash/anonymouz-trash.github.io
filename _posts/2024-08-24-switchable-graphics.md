@@ -7,10 +7,10 @@ image:
   path: /assets/img/2024-12-22-switchable-graphics.jpg
 last_modified_at: 2024-08-26 06:05:00 +0100
 ---
-In this article I describe in short what to do in Arch Linux with hybrid systems like with my Laptop (ASUS TUF Gaming FX504 Series) which includes switchable graphics between Nvidia / Intel.
+In this article, I briefly describe what to do in Arch Linux with hybrid systems, like my laptop (ASUS TUF Gaming FX504 Series), which has switchable graphics between Nvidia and Intel.
 
 ## Preparation
-First have a look at your actual GPUs and what models we have. For the discrete grap
+First, have a look at your actual GPUs and what models you have.
 ```bash
 lspci -knn
 ```

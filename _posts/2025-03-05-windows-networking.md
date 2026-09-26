@@ -100,7 +100,7 @@ to deactivate all network adapters.
 
 Use the opposite to `Enable-NetAdapter` again.
 
-## Show listinening (open) ports on the server
+## Show listening (open) ports on the server
 
 ```shell
 Get-NetTCPConnection -State Listen,Established

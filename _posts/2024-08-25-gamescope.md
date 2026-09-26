@@ -23,12 +23,12 @@ sudo pacman -S gamescope
 ```
 
 ### Nvidia
-Better understanding of how Nvidia DRM Modeset is designed found in [Nvidia forum](https://forums.developer.nvidia.com/t/understanding-nvidia-drm-modeset-1-nvidia-linux-driver-modesetting/204068/3) by an official called "aplattner".
+A better understanding of how Nvidia DRM Modeset is designed can be found in this [Nvidia forum post](https://forums.developer.nvidia.com/t/understanding-nvidia-drm-modeset-1-nvidia-linux-driver-modesetting/204068/3) by an official called "aplattner".
 
 > [...] All it really does is enable the DRIVER_MODESET capability flag in the nvidia-drm devices so that DRM clients can use the various modesetting APIs. In addition to allowing clients that talk to the low-level DRM interface to work, it’s also necessary for some PRIME-related interoperability features. [...]
 {: .prompt-info }
 
-To set it you have to add it `nvidia-drm.modeset=1` to the kernel (linux) command line in bootloaders, like for `GRUB` you have to edit `/etc/default/grub` as root.
+To set it, you have to add `nvidia-drm.modeset=1` to the kernel (linux) command line in your bootloader; for `GRUB`, you have to edit `/etc/default/grub` as root.
 ```bash
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nvidia-drm.modeset=1"
 ```
@@ -76,7 +76,7 @@ If you're using `Proton-GE` custom build then edit your start options per-game t
 WINE_FULLSCREEN_FSR=1 WINE_FULLSCREEN_FSR_MODE=balanced WINE_FULLSCREEN_FSR_STRENGTH=1 %command%
 ```
 
-### Any other lauchners
+### Any other launchers
 ... have options for this, for example:
 ![gamescope-lutris](/assets/img/gamescope-lutris.png)
 ![gamescope-heroic](/assets/img/gamescope-heroic.png)
@@ -102,7 +102,7 @@ WINE_FULLSCREEN_FSR=1 WINE_FULLSCREEN_FSR_CUSTOM_MODE=1280x720 WINE_FULLSCREEN_F
 
 * Final result:
 ![gamescope-tesiv-fps](/assets/img/gamescope-tesv-fps.png)
-> I don't know how accurate `MangoHUD` is, but the game runs smooth.
+> I don't know how accurate `MangoHUD` is, but the game runs smoothly.
 
 > More games will follow.
 {: .prompt-info }

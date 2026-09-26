@@ -65,7 +65,7 @@ System clock synchronized: yes
 ```
 
 ## Troubleshooting
-The service writes to a local file `/var/lib/systemd/timesync/clock` with every synchronization and every 60 seconds. This location is hard-coded and cannot be changed. To view this log type the following.
+The service writes to a local file `/var/lib/systemd/timesync/clock` with every synchronization and every 60 seconds. This location is hard-coded and cannot be changed. To view this log, type the following.
 ```bash
 journalctl -u systemd-timesyncd --no-hostname --since "1 day ago"
 ```

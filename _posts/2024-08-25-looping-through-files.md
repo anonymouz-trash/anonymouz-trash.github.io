@@ -7,7 +7,7 @@ image:
   path: /assets/img/2024-12-22-looping-through-files.jpg
 last_modified_at: 2024-10-14 08:52:00 +0100
 ---
-Here I want to share some quick and dirty small scripts for different use cases. These in most cases are one-liners.
+Here I want to share some quick and dirty scripts for different use cases. In most cases, these are one-liners.
 
 ## ... in a single FOR-loop
 This example batch-decrypt password-protected PDF files. You'll need `pdftk` for this.
@@ -31,4 +31,4 @@ find /path/to/games/roms/gba -type f -iname "*Street Fighter*.gba" -exec cp {} /
 | --- | --- |
 | -type f | determines the file type `f = file` and `d = directory` |
 | -iname "" | anything that matches this string (similar to windows) |
-| -exec {}\; | `do` with found files, `{}` = contains the filename, `\;` requiered (marks end of script)  |
+| -exec {}\; | `do` with found files, `{}` = contains the filename, `\;` required (marks end of script)  |

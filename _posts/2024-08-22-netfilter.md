@@ -7,10 +7,10 @@ image:
   path: /assets/img/2024-12-22-netfilter.jpg
 last_modified_at: 2025-06-07 08:09:00 +0100
 ---
-Iptables is the main packet filtering and firewalling tool in the Linux world. It's developed by a company named NetFilter. So iptables becomes deprecated over the time and nftables is the new implementation of iptables.
+Iptables is the main packet filtering and firewalling tool in the Linux world. It's developed by a company named Netfilter. Over time, iptables became deprecated and nftables is the new implementation of iptables.
 
 ## Enable routing
-With this command you can activate routing, but this setting is not perstistent and will get deactivated upon next reboot.
+With this command you can activate routing, but this setting is not persistent and will get deactivated upon the next reboot.
 What happens is we change the kernel parameter for ip forwarding.
 ```bash
 sysctl -w net.ipv4.ip_forward=1
@@ -91,7 +91,7 @@ tcpdump -ni any icmp
 | icmp | Specifies the protocol, e.g. like ping (icmp) for testing |
 
 ## Use iptables as a script
-For giving you an impression of how you can utilize iptables within a script with a few examples you can have a look at this script.
+To give you an impression of how you can utilize iptables within a script, have a look at this example script.
 
 ```shell
 #!/bin/bash

@@ -20,7 +20,7 @@ Gamemode is configured via the following files, which are read and then merged i
 * `/etc/gamemode.ini`; for system-wide configuration
 * `~/gamemode.ini`; for user-local configuration
 * `./gamemode.ini`; for directory-local configuration like for one game only
-You can find a example `gamemode.ini` config on [FeralInteractive's GitHub](https://github.com/FeralInteractive/gamemode/blob/master/example/gamemode.ini).
+You can find an example `gamemode.ini` config on [FeralInteractive's GitHub](https://github.com/FeralInteractive/gamemode/blob/master/example/gamemode.ini).
 
 Add your user account to the gamemode-group and start the service afterwards.
 ```bash
@@ -66,6 +66,6 @@ MANGOHUD=1
 {: .prompt-info }
 
 ## GOverlay
-**`GOverlay`** is an open source project aimed to create a Graphical UI to manage Vulkan/OpenGL overlays. It is still in early development, so it lacks a lot of features.
+**`GOverlay`** is an open source project aimed at creating a graphical UI to manage Vulkan/OpenGL overlays. It is still in early development, so it lacks a lot of features.
 ![goverlay](/assets/img/goverlay.png)
 ![mangohud](/assets/img/mangohud.png)

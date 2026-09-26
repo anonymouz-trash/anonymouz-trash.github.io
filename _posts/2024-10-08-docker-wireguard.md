@@ -7,7 +7,7 @@ image:
   path: /assets/img/2024-12-22-docker-wireguard.jpg
 last_modified_at: 2024-10-09 06:14:00 +0100
 ---
-Your very own VPN-service and it's also linked to AdGuard Home. ;o)
+Your very own VPN service, also linked to AdGuard Home. ;o)
 ```yml
 services:
   wireguard:
@@ -45,7 +45,7 @@ networks:
 {: file="wireguard/compose.yml"}
 
 ## Usage
-If you want to show a QR-Code for specific peer in CLI then:
+If you want to show a QR code for a specific peer in the CLI, then:
 ```bash
 docker exec -it wireguard /app/show-peer <PEER>
 ```
